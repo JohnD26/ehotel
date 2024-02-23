@@ -1,0 +1,142 @@
+.hotel-search-area {
+    width: 60%;
+    margin: 0 auto; /* Center the search area */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.hotel-chain-dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 290px;
+    cursor: pointer;
+}
+
+
+.auth-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.auth-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.login-button {
+    background-color: #28a745;
+}
+
+
+.back-button {
+    padding: 10px 15px;
+    margin-top: 15px; /* Adds some space above the button */
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+
+.hotel-search-area select,
+.hotel-search-area input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 10px);
+}
+
+
+.search-button {
+
+}
+
+
+.auth-buttons {
+
+}
+
+
+.back-button {
+
+}
+
+.date-pickers {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.hotel-search-area {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+
+.hotel-search-area select,
+.hotel-search-area input {
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+
+}
+
+
+.date-pickers input {
+    width: auto;
+    padding: 0.5rem;
+}
+
+
+.auth-buttons {
+    justify-content: flex-start;
+}
+
+
+@media (max-width: 768px) {
+    .hotel-search-area {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .hotel-search-area select,
+    .hotel-search-area input,
+    .date-pickers input {
+        width: calc(100% - 2rem);
+    }
+}
+
+
+

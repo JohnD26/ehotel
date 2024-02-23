@@ -1,0 +1,64 @@
+.create-account-container {
+    padding: 40px; /* Increased padding for more space inside */
+    max-width: 600px; /* Increased max-width for a wider form */
+    margin: 40px auto; /* More margin to center the form on the page */
+    background-color: #f5f5f5; /* Light background color for the container */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form elements for clarity */
+}
+
+.create-account-form input,
+.create-account-form select { /* Consistent styling for all input fields */
+    padding: 12px;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded borders for inputs */
+    font-size: 16px; /* Slightly larger font for readability */
+    margin-bottom: 10px; /* Margin at the bottom of each field */
+}
+
+.create-account-form button {
+    padding: 12px 15px;
+    background-color: #007bff; /* Primary color for the submit button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold; /* Make the text slightly bolder else unreadable  */
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.create-account-form button:hover {
+    background-color: #0056b3; /* Darker shade on hover for better interaction feedback */
+}
+
+/* SIN input container to align the toggle button with the input field */
+.sin-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the SIN input field and the toggle button */
+}
+
+.sin-input-container input {
+    flex-grow: 1; /* Allows the SIN input to fill the available space */
+}
+
+.sin-input-container button {
+    padding: 8px 12px;
+    background-color: #6c757d; /* Secondary color for the toggle button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sin-input-container button:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}

@@ -1,0 +1,52 @@
+.login-container {
+    padding: 40px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form elements */
+}
+
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 4px; /* Rounded borders for input fields */
+    font-size: 16px; /* Increased font size for better readability */
+}
+
+.login-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Match input field font size */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.login-form button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.back-button {
+    margin-top: 20px; /* Space between login form and back button */
+    padding: 10px 15px;
+    background-color: #6c757d; /* Secondary color for contrast */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #545b62; /* Darker shade on hover */
+}
