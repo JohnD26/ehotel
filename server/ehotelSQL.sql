@@ -21,7 +21,7 @@ CREATE TABLE hotels (
                         manager_id INTEGER,
                         count_rating INTEGER DEFAULT 1,
                         category VARCHAR(50),
-                        FOREIGN KEY (chain_id) REFERENCES hotel_chains(chain_id) -- Add FK
+                        FOREIGN KEY (chain_id) REFERENCES hotel_chains(chain_id) -- Adding FK
 );
 
 
@@ -43,9 +43,9 @@ CREATE TABLE central_office (
 -- Customers
 CREATE TABLE customers (
                            customer_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                           sin VARCHAR(15) UNIQUE NOT NULL, -- Assuming a specific format
+                           sin VARCHAR(15) UNIQUE NOT NULL,
                            email VARCHAR(255) UNIQUE NOT NULL,
-                           password VARCHAR(100) NOT NULL, -- Consider stronger hashing later
+                           password VARCHAR(100) NOT NULL,
                            registration_date DATE DEFAULT CURRENT_DATE,
                            phone_number VARCHAR(20),
                            customer_address VARCHAR(255)
@@ -60,7 +60,7 @@ CREATE TABLE employees (
                            role VARCHAR(50),
                            hotel_id INTEGER,
                            employee_address VARCHAR(255),
-                           FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id) -- Add foreign key
+                           FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id) -- Adding foreign key
 );
 
 
@@ -85,7 +85,7 @@ CREATE TABLE bookings (
                           booking_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                           chain_id INTEGER NOT NULL,
                           hotel_id INTEGER NOT NULL,
-                          room_number INTEGER, -- Assuming room numbers are integers
+                          room_number INTEGER, -- room numbers are integers
                           customer_id INTEGER NOT NULL,
                           status VARCHAR(50),
                           active BOOLEAN DEFAULT TRUE,
