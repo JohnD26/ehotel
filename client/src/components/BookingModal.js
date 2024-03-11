@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import './BookingModal.css'; // Make sure to create this CSS file for styling
+import './BookingModal.css';
 
 const BookingModal = ({ hotel, onClose }) => {
     const [startDate, setStartDate] = useState(new Date());
