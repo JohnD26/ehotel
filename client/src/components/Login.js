@@ -1,28 +1,45 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; //
-import './Login.css';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css'; // You can either reuse CreateAccount.css or adjust Login.css similarly
 
 const Login = () => {
-    const navigate = useNavigate(); //  for navigation
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleLogin = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // After processing login, navigate to the HotelSelector page
-        navigate('/'); // Use navigate function to redirect
+        // Implement the login logic here
+        console.log('Login attempt with email:', email, 'and password:', password);
+        // Placeholder for actual login logic
+        navigate('/'); // Redirect on successful login
     };
 
     return (
-        <div className="login-container">
-            <form className="login-form" onSubmit={handleLogin}>
-                {/* We will add input fields for email and password */
-                }
-                <input type="email" placeholder="Email" required />
-                <input type="password" placeholder="Password" required />
-                <button type="submit">Log In</button>
+        <div className="create-account-container"> {/* Reuse the class for consistent styling */}
+            <form className="create-account-form" onSubmit={handleSubmit}>
+                <div className="form-section">
+                    <h3>Login</h3> {/* Using a similar heading for consistency */}
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className="form-actions">
+                    <button type="submit" className="create-account-submit">Log In</button>
+                    <button type="button" onClick={() => navigate('/')} className="back-button">Back to Hotels</button>
+                </div>
             </form>
-            <button className="back-button" onClick={() => navigate('/')}>
-                Back to Hotels
-            </button>
         </div>
     );
 };

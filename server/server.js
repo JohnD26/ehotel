@@ -1,28 +1,20 @@
+// server.js adjustment
 const express = require('express');
-const app = express();
-const pool = require('./db');
+const cors = require('cors');
+const customerRoutes = require('./routes/customerRoutes'); // Adjust path as necessary
 
-// Middleware
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+}));
 app.use(express.json());
 
-// Welcome route
-app.get('/', (req, res) => {
-    res.send('Welcome to the Hotel API');
-});
+// Correctly prefix the router here
+app.use('/customer', customerRoutes);
 
-// Endpoint to get data from the database
-app.get('/hotels', async (req, res) => {
-    try {
-        const allHotels = await pool.query('SELECT * FROM hotels');
-        res.json(allHotels.rows);
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-    }
-});
-
-// Start the server on a port default to 3000
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

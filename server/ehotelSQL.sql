@@ -123,3 +123,4 @@ CREATE TABLE views (
                        FOREIGN KEY (room_id) REFERENCES rooms(room_id),
                        UNIQUE (room_id) -- Ensures a room has only one associated view
 );
+
