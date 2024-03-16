@@ -1,126 +1,117 @@
---Data source already configured in the ehotelsuppport.json
---This was added as illustration just for quality
---We are connected to the port in the ehotelsupport.json
+CREATE TABLE HotelChain (
+                            ChainID CHAR(5) NOT NULL UNIQUE,
+                            Name VARCHAR(40) NOT NULL,
+                            OfficeAddress VARCHAR(50) NOT NULL,
+                            NumberOfHotels NUMERIC check (NumberOfHotels >= 0)  NOT NULL,
+                            ContactEmail VARCHAR(40) NOT NULL UNIQUE,
+                            PhoneNumber CHAR(10) NOT NULL UNIQUE,
+                            PRIMARY KEY(ChainID)
+);
 
--- Chains
-CREATE TABLE hotel_chains (
-                              chain_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                              name VARCHAR(100) UNIQUE NOT NULL
+CREATE TABLE Hotel (
+                       HotelID CHAR(5) NOT NULL UNIQUE,
+                       ChainID CHAR(5) NOT NULL,
+                       Category INTEGER check ( Category>=1 and Category<=5 ) NOT NULL,
+                       NumOfRooms NUMERIC check (NumOfRooms >= 0)  NOT NULL,
+                       Address VARCHAR(50) NOT NULL,
+                       ContactEmail VARCHAR(40) NOT NULL,
+                       PhoneNumber CHAR(10) NOT NULL,
+                       PRIMARY KEY (HotelID),
+                       FOREIGN KEY (ChainID) REFERENCES HotelChain(ChainID) ON DELETE CASCADE
+);
+
+CREATE TABLE Room (
+                      RoomID CHAR(5) NOT NULL UNIQUE,
+                      HotelID CHAR(5) NOT NULL,
+                      RoomNumber NUMERIC(20) NOT NULL,
+                      Price NUMERIC(20) NOT NULL check (Price >= 0)  NOT NULL,
+                      Amenities VARCHAR(100) NOT NULL,
+                      Capacity NUMERIC(20) NOT NULL check (capacity > 0)  NOT NULL,
+                      SeaView BOOLEAN NOT NULL,
+                      MountainView BOOLEAN NOT NULL,
+                      Extendable BOOLEAN NOT NULL,
+                      Damages BOOLEAN NOT NULL,
+                      PRIMARY KEY(RoomID),
+                      FOREIGN KEY (HotelID) REFERENCES Hotel(HotelID) ON DELETE CASCADE
 );
 
 
--- Hotels
-CREATE TABLE hotels (
-                        hotel_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                        chain_id INTEGER NOT NULL,
-                        hname VARCHAR(100) NOT NULL,
-                        rating INTEGER CHECK (rating >= 1 AND rating <= 5),
-                        email VARCHAR(255) UNIQUE NOT NULL,
-                        phone_number VARCHAR(20),
-                        address VARCHAR(255) NOT NULL,
-                        manager_id INTEGER,
-                        count_rating INTEGER DEFAULT 1,
-                        category VARCHAR(50),
-                        FOREIGN KEY (chain_id) REFERENCES hotel_chains(chain_id) -- Adding FK
+CREATE TABLE Customer (
+                          CustomerID SERIAL NOT NULL UNIQUE,
+                          Email VARCHAR(40) NOT NULL UNIQUE,
+                          Password VARCHAR(40) NOT NULL,
+                          FullName VARCHAR(40) NOT NULL,
+                          Address VARCHAR(50) NOT NULL,
+                          SSN INT NOT NULL  CHECK( SSN BETWEEN 100000000 AND 999999999 ) UNIQUE,
+                          DateOfRegistration DATE NOT NULL,
+                          PRIMARY KEY(CustomerID)
+);
+
+CREATE TABLE Positions (
+                           PositionID SERIAL NOT NULL UNIQUE,
+                           PositionName VARCHAR(40) NOT NULL,
+                           PRIMARY KEY (PositionID)
+);
+
+CREATE TABLE Employee (
+                          EmployeeID SERIAL NOT NULL UNIQUE ,
+                          Email VARCHAR(40) NOT NULL  ,
+                          Password VARCHAR(40) NOT NULL,
+                          HotelID CHAR(5) NOT NULL,
+                          FullName VARCHAR(40) NOT NULL,
+                          Address VARCHAR(50) NOT NULL,
+                          SSN INT NOT NULL CHECK( SSN BETWEEN 100000000 AND 999999999 ) UNIQUE,
+                          PRIMARY KEY (EmployeeID),
+                          FOREIGN KEY (HotelID) REFERENCES Hotel(HotelID) ON DELETE CASCADE
+
+);
+CREATE TABLE EmployeePosition (
+                                  EmployeeID SERIAL NOT NULL,
+                                  PositionID SERIAL NOT NULL,
+                                  PRIMARY KEY (EmployeeID, PositionID),
+                                  FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID) ON DELETE CASCADE,
+                                  FOREIGN KEY (PositionID) REFERENCES Positions(PositionID) ON DELETE CASCADE
+);
+CREATE TABLE Renting (
+                         RentingID SERIAL NOT NULL UNIQUE ,
+                         HotelID CHAR(5) NOT NULL,
+                         RoomID CHAR(5) NOT NULL,
+                         CustomerID SERIAL NOT NULL,
+                         CheckinDate DATE NOT NULL,
+                         CheckoutDate DATE NOT NULL  check ( CheckoutDate > CheckinDate ),
+                         PRIMARY KEY(RentingID),
+                         FOREIGN KEY (HotelID) REFERENCES Hotel(HotelID) ON DELETE CASCADE,
+                         FOREIGN KEY (RoomID) REFERENCES Room(RoomID) ON DELETE RESTRICT ,
+                         FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE
 );
 
 
-
-
-
--- Central Office
-CREATE TABLE central_office (
-                                office_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                                chain_id INTEGER NOT NULL,
-                                email VARCHAR(255) UNIQUE NOT NULL,
-                                phone_number VARCHAR(20),
-                                address VARCHAR(255) NOT NULL,
-                                office_name VARCHAR(100)
+CREATE TABLE Archive (
+                         ArchiveID SERIAL NOT NULL UNIQUE ,
+                         IsBooking BOOLEAN NOT NULL,
+                         ArchivedID CHAR(5) NOT NULL,
+                         HotelID CHAR(5) NOT NULL,
+                         RoomID CHAR(5) NOT NULL,
+                         CustomerID SERIAL NOT NULL,
+                         BookingDate DATE, --can be null since rentings don't have booking dates
+                         CheckinDate DATE NOT NULL,
+                         CheckoutDate DATE NOT NULL  check ( CheckoutDate > CheckinDate ),
+                         PRIMARY KEY(ArchiveID)
 );
 
-
-
--- Customers
-CREATE TABLE customers (
-                           customer_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                           sin VARCHAR(15) UNIQUE NOT NULL,
-                           email VARCHAR(255) UNIQUE NOT NULL,
-                           password VARCHAR(100) NOT NULL,
-                           registration_date DATE DEFAULT CURRENT_DATE,
-                           phone_number VARCHAR(20),
-                           customer_address VARCHAR(255)
+CREATE TABLE Booking (
+                         BookingID SERIAL NOT NULL UNIQUE ,
+                         HotelID CHAR(5) NOT NULL,
+                         RoomID CHAR(5) NOT NULL,
+                         CustomerID SERIAL NOT NULL,
+                         BookingDate DATE NOT NULL,
+                         CheckinDate DATE NOT NULL,
+                         CheckoutDate Date NOT NULL  check ( CheckoutDate > CheckinDate ),
+                         PRIMARY KEY (BookingID),
+                         FOREIGN KEY (HotelID) REFERENCES Hotel(HotelID) ON DELETE CASCADE,
+                         FOREIGN KEY (RoomID) REFERENCES Room(RoomID) ON DELETE RESTRICT ,
+                         FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE
 );
-
--- Employees
-CREATE TABLE employees (
-                           employee_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                           sin VARCHAR(15) UNIQUE NOT NULL,
-                           email VARCHAR(255) UNIQUE NOT NULL,
-                           password VARCHAR(100) NOT NULL,
-                           role VARCHAR(50),
-                           hotel_id INTEGER,
-                           employee_address VARCHAR(255),
-                           FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id) -- Adding foreign key
+CREATE TABLE Cities (
+    City varchar(20) NOT NULL unique
 );
-
-
-
-CREATE TABLE rooms (
-                       room_id SERIAL PRIMARY KEY,
-                       hotel_id INTEGER NOT NULL,
-                       room_number INTEGER NOT NULL,
-                       room_type VARCHAR(50),
-                       capacity INTEGER,
-                       price_per_night DECIMAL(10,2),
-                       availability BOOLEAN DEFAULT TRUE,
-                       has_tv BOOLEAN DEFAULT FALSE,
-                       has_fridge BOOLEAN DEFAULT FALSE,
-                       FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id)
-);
-
-
-
--- Reservation
-CREATE TABLE bookings (
-                          booking_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                          chain_id INTEGER NOT NULL,
-                          hotel_id INTEGER NOT NULL,
-                          room_number INTEGER, -- room numbers are integers
-                          customer_id INTEGER NOT NULL,
-                          status VARCHAR(50),
-                          active BOOLEAN DEFAULT TRUE,
-                          rated BOOLEAN DEFAULT FALSE,
-                          check_in DATE NOT NULL,
-                          check_out DATE NOT NULL,
-                          FOREIGN KEY (chain_id) REFERENCES hotel_chains(chain_id),
-                          FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id),
-                          FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
-);
-
-
-
-
-CREATE TABLE amenities (
-                           amenity_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
-                           amenity_name VARCHAR(100) UNIQUE NOT NULL
-);
-
-
-
-CREATE TABLE room_amenities (
-                                room_id INTEGER NOT NULL,
-                                amenity_id INTEGER NOT NULL,
-                                FOREIGN KEY (room_id) REFERENCES rooms(room_id),
-                                FOREIGN KEY (amenity_id) REFERENCES amenities(amenity_id),
-                                PRIMARY KEY (room_id, amenity_id) -- Composite primary key
-);
-
-
-CREATE TABLE views (
-                       view_id SERIAL PRIMARY KEY,
-                       view_type VARCHAR(50),
-                       room_id INTEGER NOT NULL,
-                       FOREIGN KEY (room_id) REFERENCES rooms(room_id),
-                       UNIQUE (room_id) -- Ensures a room has only one associated view
-);
-
