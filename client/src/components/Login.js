@@ -9,10 +9,31 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // Implement the login logic here
-        console.log('Login attempt with email:', email, 'and password:', password);
-        // Placeholder for actual login logic
-        navigate('/'); // Redirect on successful login
+
+        try {
+            const response = await fetch('http://localhost:3001/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({ email, password }),
+            });
+
+
+            const data = await response.json();
+
+            if (response.ok) {
+                console.log('Login successful:', data);
+                // Handle storing the authentication token here, e.g., localStorage, context, etc.
+                navigate('/'); // Redirect to a protected route or homepage on success
+            } else {
+                // Handle login failures, maybe update state to show an error message
+                console.error('Login failed:', data.error);
+            }
+        } catch (error) {
+            console.error('Error during login attempt:', error);
+        }
     };
 
     return (

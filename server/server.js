@@ -5,6 +5,7 @@ const cors = require('cors');
 // If you have other route files
 const customerRoutes = require('./routes/customerRoutes'); // Adjust this path as needed
 const searchRoutes = require('./routes/hotelSearchLogic'); // Example: Adjust this path as needed for your search functionality
+const loginRoutes = require('./routes/loginRoutes');
 
 // Create an Express app
 const app = express();
@@ -25,6 +26,7 @@ app.use('/customer', customerRoutes); // Example: Adjust based on your project s
 // Assuming your search functionality is separate, you could mount it like this:
 app.use('/api', searchRoutes); // This prefixes all routes in the searchRoutes with '/api'
 
+app.use('/auth', loginRoutes); // Use login routes
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
