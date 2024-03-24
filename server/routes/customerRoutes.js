@@ -4,28 +4,23 @@ const pool = require('../db');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 
-// Assuming environment variables for secrets
 const secret_key = bcrypt.genSaltSync(10);
 const jwtSecret = process.env.JWT_SECRET || "your_jwt_secret_here";
 
-// Post request to add customer
 router.post('/', async (req, res) => {
-    const { sin, email, password, phoneNumber, customerAddress } = req.body;
+    const { sin, email, password, phoneNumber, customerAddress, firstName, lastName } = req.body;
 
-    // Validate required fields
-    if (!sin || !email || !password) {
+    if (!sin || !email || !password || !firstName || !lastName) {
         return res.status(400).json({ error: "Missing required information." });
     }
 
     try {
-        // Hash the password
         const passwordEncrypt = await bcrypt.hash(password, secret_key);
 
-        // Insert the new customer into the database
         const newCustomer = await pool.query(
-            `INSERT INTO customers (sin, email, password, phone_number, customer_address)
-             VALUES ($1, $2, $3, $4, $5) RETURNING *`,
-            [sin, email, passwordEncrypt, phoneNumber, customerAddress]
+            `INSERT INTO customers (sin, email, password, phone_number, customer_address, first_name, last_name)
+             VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+            [sin, email, passwordEncrypt, phoneNumber, customerAddress, firstName, lastName]
         );
 
         res.json(newCustomer.rows[0]);

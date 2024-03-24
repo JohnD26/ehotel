@@ -43,6 +43,8 @@ CREATE TABLE central_office (
 -- Customers
 CREATE TABLE customers (
                            customer_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
+                           first_name VARCHAR(255) NOT NULL,
+                           last_name VARCHAR(255) NOT NULL,
                            sin VARCHAR(15) UNIQUE NOT NULL,
                            email VARCHAR(255) UNIQUE NOT NULL,
                            password VARCHAR(100) NOT NULL,
@@ -73,8 +75,6 @@ CREATE TABLE rooms (
                        capacity INTEGER,
                        price_per_night DECIMAL(10,2),
                        availability BOOLEAN DEFAULT TRUE,
-                       has_tv BOOLEAN DEFAULT FALSE,
-                       has_fridge BOOLEAN DEFAULT FALSE,
                        FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id)
 );
 
@@ -117,6 +117,8 @@ CREATE TABLE room_amenities (
 
 
 CREATE TABLE views (
+
+    --these are views for the rooms
                        view_id SERIAL PRIMARY KEY,
                        view_type VARCHAR(50),
                        room_id INTEGER NOT NULL,

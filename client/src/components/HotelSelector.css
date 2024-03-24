@@ -1,140 +1,300 @@
+/*
+
+:root {
+    --background-color: #f0f0f0; !* Pale grey background for the search box *!
+    --text-color-dark: #000000; !* Dark black color for text *!
+    --button-color-dark: #000000; !* Dark black color for buttons *!
+    --button-text-color: #ffffff; !* White color for text inside buttons for contrast *!
+    --border-radius: 5px; !* Rounded corners for inputs and buttons *!
+    --font-family: 'Arial', sans-serif; !* Standard, web-safe font family *!
+    --search-box-background: #f0f0f0; !* Pale grey for the search box background *!
+    --primary-color: #0056b3; !* Deep blue color *!
+    --primary-color-hover: #004494; !* Slightly darker blue for hover state *!
+    --secondary-color: #f2f2f2; !* Light grey used for input backgrounds *!
+    --text-color: #ffffff; !* White color for text for readability on dark background *!
+    --border-radius: 5px; !* Rounded corners for inputs and buttons *!
+    --font-family: 'Arial', sans-serif; !* Standard, web-safe font family *!
+}
+
+.hotel-search-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.auth-button {
+    background-color: var(--button-color-dark);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px;
+}
+
+.auth-button:hover {
+    background-color: #333333;
+}
+
 .hotel-search-area {
-    width: 60%;
-    margin: 0 auto; /* Center the search area */
+    background-color: var(--primary-color);
+    color: var(--text-color);
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .search-title {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
 }
 
-.hotel-chain-dropdown {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 15px;
-}
-
-
-.search-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 290px;
-    cursor: pointer;
-}
-
-
-.auth-buttons {
+.search-row {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.auth-button {
-    background-color: #007bff;
-    color: #fff;
+.search-input, .search-select, .date-range-picker {
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    width: 100%;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.search-input:last-child, .search-select:last-child, .date-range-picker:last-child {
+    margin-right: 0;
+}
+
+.search-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: var(--border-radius);
     border: none;
-    padding: 10px 20px;
+    background-color: #ff9900;
+    color: var(--text-color);
+    font-size: 1.2rem;
     cursor: pointer;
-    margin: 5px;
-}
-
-.login-button {
-    background-color: #28a745;
-}
-
-
-.back-button {
-    padding: 10px 15px;
-    margin-top: 15px; /* Adds some space above the button */
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
     transition: background-color 0.3s;
 }
 
-.back-button:hover {
-    background-color: #5a6268;
+.search-button:hover {
+    background-color: #e68a00;
 }
-
-
-.hotel-search-area select,
-.hotel-search-area input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: calc(100% - 10px);
-}
-
-
-.search-button {
-
-}
-
-
-.auth-buttons {
-
-}
-
-
-.back-button {
-
-}
-
-.date-pickers {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-
-
-.hotel-search-area {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem;
-}
-
-
-.hotel-search-area select,
-.hotel-search-area input {
-    width: calc(100% - 2rem);
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-
-}
-
-
-.date-pickers input {
-    width: auto;
-    padding: 0.5rem;
-}
-
-
-.auth-buttons {
-    justify-content: flex-start;
-}
-
 
 @media (max-width: 768px) {
-    .hotel-search-area {
-        width: 90%;
-        padding: 1rem;
+    .search-row {
+        flex-direction: column;
     }
 
-    .hotel-search-area select,
-    .hotel-search-area input,
-    .date-pickers input {
-        width: calc(100% - 2rem);
+    .search-input, .search-select, .date-range-picker {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .search-input:last-child, .search-select:last-child, .date-range-picker:last-child {
+        margin-bottom: 0;
+    }
+
+    .auth-buttons {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .hotel-search-area {
+        padding: 20px;
+    }
+}
+
+!* Adjustments for the date range picker to make it longer and max cost input *!
+.date-range-picker {
+    flex-grow: 3;
+    width: auto;
+    margin-right: 10px;
+}
+
+.search-input[name="maxCost"] {
+    flex: 0 1 30%;
+    width: 20%;
+    max-width: 200px;
+}
+
+.date-range-picker:last-child, .search-input[name="maxCost"]:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .date-range-picker, .search-input[name="maxCost"] {
+        flex: 1 0 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .date-range-picker:last-child, .search-input[name="maxCost"]:last-child {
+        margin-bottom: 0;
+    }
+}
+
+*/
+
+
+
+
+/*Similar to Booking website*/
+
+:root {
+    --background-color: #f0f0f0;
+    --text-color-dark: #333333;
+    --button-color-dark: #0071c2;
+    --button-text-color: #ffffff;
+    --border-radius: 4px;
+    --font-family: 'Roboto', 'Arial', sans-serif;
+    --search-box-background: #ffffff;
+    --primary-color: #0071c2;
+    --primary-color-hover: #005f9c;
+    --secondary-color: #e7e7e7;
+    --text-color: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+}
+
+.hotel-search-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.auth-buttons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    display: flex;
+}
+
+.auth-button {
+    background-color: var(--button-color-dark);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-family);
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px;
+}
+
+.auth-button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.hotel-search-area {
+    background-color: var(--search-box-background);
+    color: var(--text-color-dark);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2; /* Ensure search area is above the background slider */
+}
+
+.search-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.search-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.search-input, .search-select, .date-range-picker {
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+.search-input:focus, .search-select:focus, .date-range-picker:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.search-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border: none;
+    background-color: var(--button-color-dark);
+    color: var(--button-text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+@media (max-width: 768px) {
+    .search-row {
+        flex-direction: column;
+    }
+
+    .search-input, .search-select, .date-range-picker {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .search-input:last-child, .search-select:last-child, .date-range-picker:last-child {
+        margin-bottom: 0;
+    }
+
+    .auth-buttons {
+        top: 10px;
+        right: 10px;
     }
 }
 

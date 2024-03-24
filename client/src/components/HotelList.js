@@ -1,51 +1,34 @@
-// HotelList.js
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation hook for accessing search results passed via navigation state
 import './HotelList.css';
 import BookingModal from './BookingModal'; // This will be used later after dB is setup
 
-const HotelList = ({ selectedChain }) => {
-    const [hotels, setHotels] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+const HotelList = () => {
+    const { state } = useLocation(); // Access state passed via navigation
+    const [hotels, setHotels] = useState(state ? state.searchResults : []);
+    const [isLoading, setIsLoading] = useState(false); // Adjust based on whether you expect immediate content
     const [currentPage, setCurrentPage] = useState(1);
     const [hotelsPerPage] = useState(10); // Adjust as needed
-
-    useEffect(() => {
-        const fetchHotels = async () => {
-            setIsLoading(true);
-            // Fetching hotels from an API
-            try {
-                // This URL is a placeholder. We'll replace it with the  actual API URL.
-                const response = await fetch(`api/hotels?chain=${selectedChain}&page=${currentPage}&limit=${hotelsPerPage}`);
-                const data = await response.json();
-                setHotels(data.hotels);
-                setIsLoading(false);
-            } catch (error) {
-                console.error('Error fetching hotels:', error);
-                setIsLoading(false);
-            }
-        };
-
-        fetchHotels();
-    }, [selectedChain, currentPage, hotelsPerPage]);
 
     // Function to handle page change
     const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
 
-    // Handler to initiate booking which will form a widget
+    // Handler to initiate booking
     const handleBooking = (hotelId) => {
         console.log("Initiate booking process for hotel ID:", hotelId);
-        // Back end logic to open booking modal or navigate to booking page
+        // Logic to open booking modal or navigate to booking page
     };
 
     if (isLoading) return <div>Loading hotels...</div>;
 
+    // Pagination logic
     const lastHotelIndex = currentPage * hotelsPerPage;
     const firstHotelIndex = lastHotelIndex - hotelsPerPage;
     const currentHotels = hotels.slice(firstHotelIndex, lastHotelIndex);
 
     return (
         <div className="hotel-list-container">
-            <h2>Hotels under {selectedChain}</h2>
+            <h2>Search Results</h2>
             <div className="hotel-list">
                 {currentHotels.map((hotel) => (
                     <div key={hotel.id} className="hotel-card">
