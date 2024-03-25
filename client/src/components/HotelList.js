@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook for accessing search results passed via navigation state
+import { useLocation } from 'react-router-dom';
 import './HotelList.css';
-import BookingModal from './BookingModal'; // This will be used later after dB is setup
+// import BookingModal from './BookingModal'; // Uncomment when BookingModal is ready
 
 const HotelList = () => {
-    const { state } = useLocation(); // Access state passed via navigation
-    const [hotels, setHotels] = useState(state ? state.searchResults : []);
-    const [isLoading, setIsLoading] = useState(false); // Adjust based on whether you expect immediate content
+    const { state } = useLocation();
+    // Initialize hotels with an empty array or with the searchResults if it's an array
+    const [hotels, setHotels] = useState(Array.isArray(state?.searchResults) ? state.searchResults : []);
+    const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [hotelsPerPage] = useState(10); // Adjust as needed
+    const [hotelsPerPage] = useState(10);
 
-    // Function to handle page change
-    const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+    useEffect(() => {
+        // Additional effect to handle asynchronous loading if necessary, e.g., fetching from an API
+    }, []);
 
-    // Handler to initiate booking
-    const handleBooking = (hotelId) => {
+    const handlePageChange = pageNumber => setCurrentPage(pageNumber);
+
+    const handleBooking = hotelId => {
         console.log("Initiate booking process for hotel ID:", hotelId);
-        // Logic to open booking modal or navigate to booking page
+        // Logic for handling booking (show modal, navigate, etc.)
     };
 
-    if (isLoading) return <div>Loading hotels...</div>;
+    if (isLoading) {
+        return <div>Loading hotels...</div>;
+    }
 
-    // Pagination logic
+    // Calculate pagination
     const lastHotelIndex = currentPage * hotelsPerPage;
     const firstHotelIndex = lastHotelIndex - hotelsPerPage;
     const currentHotels = hotels.slice(firstHotelIndex, lastHotelIndex);
@@ -29,22 +34,25 @@ const HotelList = () => {
     return (
         <div className="hotel-list-container">
             <h2>Search Results</h2>
-            <div className="hotel-list">
-                {currentHotels.map((hotel) => (
-                    <div key={hotel.id} className="hotel-card">
-                        <h3>{hotel.name}</h3>
-                        <div>Rating: {'★'.repeat(hotel.rating)}</div>
-                        <div>{hotel.description}</div>
-                        {/* Display amenities, capacity, and view here */}
-                        <div>Amenities: {hotel.amenities.join(', ')}</div>
-                        <div>Capacity: {hotel.capacity}</div>
-                        <div>View: {hotel.view}</div>
-                        <button onClick={() => handleBooking(hotel.id)}>Book Now</button>
-                    </div>
-                ))}
-            </div>
+            {currentHotels.length > 0 ? (
+                <div className="hotel-list">
+                    {currentHotels.map(hotel => (
+                        <div key={hotel.id} className="hotel-card">
+                            <h3>{hotel.name}</h3>
+                            <div>Rating: {'★'.repeat(hotel.rating)}</div>
+                            <div>{hotel.description}</div>
+                            <div>Amenities: {hotel.amenities?.join(', ')}</div>
+                            <div>Capacity: {hotel.capacity}</div>
+                            <div>View: {hotel.view}</div>
+                            <button onClick={() => handleBooking(hotel.id)}>Book Now</button>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div>No hotels found. Please adjust your search criteria and try again.</div>
+            )}
             <div className="pagination">
-                {[...Array(Math.ceil(hotels.length / hotelsPerPage)).keys()].map((number) => (
+                {[...Array(Math.ceil(hotels.length / hotelsPerPage)).keys()].map(number => (
                     <button key={number + 1} onClick={() => handlePageChange(number + 1)}>
                         {number + 1}
                     </button>

@@ -25,13 +25,21 @@ const HotelSelector = () => {
         const queryString = new URLSearchParams(searchParams).toString();
         try {
             const response = await fetch(`/api/hotel/search?${queryString}`);
-            const data = await response.json();
-            console.log(data)
+            let data = await response.json();
+            console.log(data);
+
+            // Ensure data is an array before navigating
+            if (!Array.isArray(data)) {
+                console.error('Expected an array for search results, received:', typeof data);
+                data = []; // Set to empty array if not an array to avoid runtime errors in HotelList
+            }
+
             navigate('/hotel-list', { state: { searchResults: data } });
         } catch (error) {
             console.error('Search failed:', error);
         }
     };
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;

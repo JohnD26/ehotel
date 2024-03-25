@@ -66,17 +66,18 @@ CREATE TABLE IF NOT EXISTS employees (
 );
 
 
-
+--Rooms
 CREATE TABLE IF NOT EXISTS rooms (
-                       room_id SERIAL PRIMARY KEY,
-                       hotel_id INTEGER NOT NULL,
-                       room_number INTEGER NOT NULL,
-                       room_type VARCHAR(50),
-                       capacity INTEGER,
-                       price_per_night DECIMAL(10,2),
-                       availability BOOLEAN DEFAULT TRUE,
-                       FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id)
-);
+                                     room_id SERIAL PRIMARY KEY,
+                                     hotel_id INTEGER NOT NULL,
+                                     room_number INTEGER NOT NULL,
+                                     room_type VARCHAR(50), -- 'Single' or 'Double' if needed
+                                     capacity INTEGER,
+                                     price_per_night DECIMAL(10,2),
+                                     availability BOOLEAN DEFAULT TRUE,
+                                     category VARCHAR(50), -- Luxurious, standard or economic
+                                     FOREIGN KEY (hotel_id) REFERENCES hotels(hotel_id)
+    );
 
 
 

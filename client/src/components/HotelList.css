@@ -155,3 +155,11 @@
     z-index: 1001;
 }
 
+.hotel-card .hotel-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

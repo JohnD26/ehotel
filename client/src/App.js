@@ -5,6 +5,7 @@ import HotelSelector from './components/HotelSelector';
 import BackgroundSlider from './components/BackgroundSlider';
 import CreateAccount from './components/CreateAccount';
 import Login from './components/Login';
+import HotelList from './components/HotelList'; // Import HotelList component
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                         <Route path="/" element={<HotelSelector />} />
                         <Route path="/create-account" element={<CreateAccount />} />
                         <Route path="/login" element={<Login />} />
+                        <Route path="/hotel-list" element={<HotelList />} />
                     </Routes>
                 </header>
             </div>
