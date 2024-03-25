@@ -24,8 +24,9 @@ const HotelSelector = () => {
     const handleSearch = async () => {
         const queryString = new URLSearchParams(searchParams).toString();
         try {
-            const response = await fetch(`/api/search?${queryString}`);
+            const response = await fetch(`/api/hotel/search?${queryString}`);
             const data = await response.json();
+            console.log(data)
             navigate('/hotel-list', { state: { searchResults: data } });
         } catch (error) {
             console.error('Search failed:', error);
