@@ -62,8 +62,15 @@ const HotelSelector = () => {
                 <h2 className="search-title">Find Your Ideal Hotel</h2>
                 <div className="search-row">
                     <input type="text" name="location" placeholder="Location (City)" onChange={handleChange} value={searchParams.location} className="search-input" />
-                    <select name="hotelChain" onChange={handleChange} value={searchParams.hotelChain} className="search-select">
+                    <select name="hotelChain" onChange={handleChange} value={searchParams.hotelChain}
+                            className="search-select">
                         <option value="default">Any Hotel Chain</option>
+                        <option value="Aurora Escapes">Aurora Escapes</option>
+                        <option value="Celestial Retreats">Celestial Retreats</option>
+                        <option value="Mystic Havens">Mystic Havens</option>
+                        <option value="Voyager Inns">Voyager Inns</option>
+                        <option value="Eden Resorts">Eden Resorts</option>
+
                         {/* More options */}
                     </select>
                     <select name="category" onChange={handleChange} value={searchParams.category} className="search-select">
@@ -83,11 +90,16 @@ const HotelSelector = () => {
                     <input type="number" name="numberOfRooms" placeholder="Rooms" min="1" onChange={handleChange} value={searchParams.numberOfRooms} className="search-input" />
                     <select name="rating" onChange={handleChange} value={searchParams.rating} className="search-select">
                         <option value="default">Choose Rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                         {/* More options */}
                     </select>
                 </div>
                 <div className="search-row">
-                    <input type="number" name="maxCost" placeholder="Max Cost" min="0" onChange={handleChange} value={searchParams.maxCost} className="search-input" />
+                <input type="number" name="maxCost" placeholder="Max Cost" min="0" onChange={handleChange} value={searchParams.maxCost} className="search-input" />
                     <DatePicker
                         selectsRange={true}
                         startDate={searchParams.startDate}
