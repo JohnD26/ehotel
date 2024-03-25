@@ -9,10 +9,34 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // Implement the login logic here
-        console.log('Login attempt with email:', email, 'and password:', password);
-        // Placeholder for actual login logic
-        navigate('/'); // Redirect on successful login
+
+        try{
+            const response = await fetch('http://localhost:3001/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    email, password
+                }),
+            });
+            const responseData = await response.json();
+
+            if (response.ok){
+                navigate('/');
+                alert(responseData.message);
+                localStorage.setItem("userData", JSON.stringify(responseData.user));
+            }
+            else {
+                console.error(responseData.error );
+                alert(responseData.error );
+            }
+
+        }catch (error) {
+            console.error('Failed to connect', error);
+            alert("Failed to connect")
+        }
     };
 
     return (

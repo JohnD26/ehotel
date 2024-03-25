@@ -3,14 +3,14 @@
 --We are connected to the port in the ehotelsupport.json
 
 -- Chains
-CREATE TABLE hotel_chains (
+CREATE TABLE IF NOT EXISTS hotel_chains (
                               chain_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                               name VARCHAR(100) UNIQUE NOT NULL
 );
 
 
 -- Hotels
-CREATE TABLE hotels (
+CREATE TABLE IF NOT EXISTS hotels (
                         hotel_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                         chain_id INTEGER NOT NULL,
                         hname VARCHAR(100) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE hotels (
 
 
 -- Central Office
-CREATE TABLE central_office (
+CREATE TABLE IF NOT EXISTS central_office (
                                 office_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                                 chain_id INTEGER NOT NULL,
                                 email VARCHAR(255) UNIQUE NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE central_office (
 
 
 -- Customers
-CREATE TABLE customers (
+CREATE TABLE IF NOT EXISTS customers (
                            customer_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                            first_name VARCHAR(255) NOT NULL,
                            last_name VARCHAR(255) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE customers (
 );
 
 -- Employees
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
                            employee_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                            sin VARCHAR(15) UNIQUE NOT NULL,
                            email VARCHAR(255) UNIQUE NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE employees (
 
 
 
-CREATE TABLE rooms (
+CREATE TABLE IF NOT EXISTS rooms (
                        room_id SERIAL PRIMARY KEY,
                        hotel_id INTEGER NOT NULL,
                        room_number INTEGER NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE rooms (
 
 
 -- Reservation
-CREATE TABLE bookings (
+CREATE TABLE IF NOT EXISTS bookings (
                           booking_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                           chain_id INTEGER NOT NULL,
                           hotel_id INTEGER NOT NULL,
@@ -100,14 +100,14 @@ CREATE TABLE bookings (
 
 
 
-CREATE TABLE amenities (
+CREATE TABLE IF NOT EXISTS amenities (
                            amenity_id SERIAL PRIMARY KEY, -- Auto-incrementing primary key
                            amenity_name VARCHAR(100) UNIQUE NOT NULL
 );
 
 
 
-CREATE TABLE room_amenities (
+CREATE TABLE IF NOT EXISTS room_amenities (
                                 room_id INTEGER NOT NULL,
                                 amenity_id INTEGER NOT NULL,
                                 FOREIGN KEY (room_id) REFERENCES rooms(room_id),
@@ -116,7 +116,7 @@ CREATE TABLE room_amenities (
 );
 
 
-CREATE TABLE views (
+CREATE TABLE  IF NOT EXISTS views (
 
     --these are views for the rooms
                        view_id SERIAL PRIMARY KEY,

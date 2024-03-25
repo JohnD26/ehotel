@@ -29,7 +29,7 @@ const CreateAccount = () => {
 
         // Adjust according to your server configuration
         try {
-            const response = await fetch('http://localhost:3001/customer', {
+            const response = await fetch('http://localhost:3001/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,18 +40,21 @@ const CreateAccount = () => {
 
                 }),
             });
+            const responseData = await response.json();
 
             if (response.ok) {
                 setAccountCreated(true);
+                alert(responseData.message)
+
                 navigate('/'); // Or navigate to another route on success
             } else {
-                const responseData = await response.json();
-                console.error('Account creation failed:', responseData);
+                console.error(responseData.error );
+                alert(responseData.error)
                 // Handle response error (e.g., show an error message to the user)
             }
         } catch (error) {
             console.error('Failed to create account:', error);
-            // Handle fetch error (e.g., show an error message to the user)
+            alert("Failed to create account:")
         }
     };
 
