@@ -91,7 +91,11 @@ const Room = sequelize.define('Room', {
     room_type: { type: DataTypes.STRING(50) },
     capacity: { type: DataTypes.INTEGER },
     price_per_night: { type: DataTypes.DECIMAL(10, 2) },
-    availability: { type: DataTypes.BOOLEAN, defaultValue: true }
+
+   /* category VARCHAR(50), -- Luxurious, standard or economic
+*/
+availability: { type: DataTypes.BOOLEAN, defaultValue: true } ,
+    room_category:{type: DataTypes.STRING(50) } ,
 }, {
     tableName: 'rooms', // Adjusted table name
     timestamps: false

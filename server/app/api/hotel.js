@@ -58,15 +58,15 @@ router.get('/search', async (req, res) => {
         }
 
         // Category filter
-        if (category && category !== 'default') {
-            searchCriteria.where.category = category;
-        }
-
-        // Room type filter
+        // Room type and category filter
         if (roomType && roomType !== 'default') {
             searchCriteria.include[0].where.room_type = roomType;
         }
-
+        // Assuming category is also a property of rooms
+        if (category && category !== 'default') {
+            searchCriteria.include[0].where.category = category;
+        }
+        
         // Number of rooms filter - this requires a subquery or a group by count in SQL
         // Since Sequelize doesn't support this natively, you'd handle this after fetching the data
         // or by using a raw SQL query within Sequelize.
