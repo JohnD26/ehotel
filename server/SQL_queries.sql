@@ -131,7 +131,7 @@ INSERT INTO Hotel VALUES
 
 
 
-INSERT INTO Room VALUES
+INSERT INTO Rooms VALUES
 -- HotelChain 00001
 -- Hotel 11001
 ('20001', '11001', 100, 150, 'TV, WiFi, minibar', 2, true, false, true, false),

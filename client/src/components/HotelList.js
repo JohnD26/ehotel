@@ -37,14 +37,14 @@ const HotelList = () => {
             {currentHotels.length > 0 ? (
                 <div className="hotel-list">
                     {currentHotels.map(hotel => (
-                        <div key={hotel.id} className="hotel-card">
-                            <h3>{hotel.name}</h3>
-                            <div>Rating: {'★'.repeat(hotel.rating)}</div>
+                        <div key={hotel.hotel_id} className="hotel-card">
+                            <h3>{hotel.hotel_name}</h3>
+                            <div>Rating: {'★'.repeat(hotel.stars)}</div>
                             <div>{hotel.description}</div>
                             <div>Amenities: {hotel.amenities?.join(', ')}</div>
                             <div>Capacity: {hotel.capacity}</div>
                             <div>View: {hotel.view}</div>
-                            <button onClick={() => handleBooking(hotel.id)}>Book Now</button>
+                            <button onClick={() => handleBooking(hotel.hotel_id)}>Book Now</button>
                         </div>
                     ))}
                 </div>

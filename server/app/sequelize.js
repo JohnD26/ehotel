@@ -1,165 +1,95 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const fs = require('fs');
-
 // Create a new Sequelize instance
 const sequelize = new Sequelize('ehotel', 'postgres', '4505', {
     host: 'localhost',
     dialect: 'postgres',
 });
 
-const sqlScript = fs.readFileSync('../ehotelSQL.sql', 'utf8');
-sequelize.query(sqlScript)
-    .then(() => {
-        console.log('Table creation script executed successfully.');
-        // Start your server or perform any other operations that depend on the tables being created
-    })
-    .catch(err => {
-        console.error('Error executing table creation script:', err);
-    });
-
-const HotelChain = sequelize.define('HotelChain', {
+const Chain = sequelize.define('Chain', {
     chain_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    name: { type: DataTypes.STRING(100), allowNull: false, unique: true }
-}, {
-    tableName: 'hotel_chains', // Adjusted table name
-    timestamps: false
-
+    chain_name: { type: DataTypes.STRING(255), allowNull: false },
+    headquarters_address: { type: DataTypes.STRING(255), allowNull: false },
+    contact_email: { type: DataTypes.STRING(255), allowNull: false },
+    contact_phone: { type: DataTypes.STRING(20), allowNull: false }
 });
 
+// Hôtel
 const Hotel = sequelize.define('Hotel', {
     hotel_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     chain_id: { type: DataTypes.INTEGER, allowNull: false },
-    hname: { type: DataTypes.STRING(100), allowNull: false },
-    rating: { type: DataTypes.INTEGER, allowNull: false, validate: { min: 1, max: 5 } },
-    email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
-    phone_number: { type: DataTypes.STRING(20) },
-    address: { type: DataTypes.STRING(255), allowNull: false },
-    manager_id: { type: DataTypes.INTEGER },
-    count_rating: { type: DataTypes.INTEGER, defaultValue: 1 },
-    category: { type: DataTypes.STRING(50) }
-}, {
-    tableName: 'hotels', // Adjusted table name
-    timestamps: false
-
+    hotel_name: { type: DataTypes.STRING(255), allowNull: false },
+    hotel_address: { type: DataTypes.STRING(255), allowNull: false },
+    contact_email: { type: DataTypes.STRING(255), allowNull: false },
+    contact_phone: { type: DataTypes.STRING(20), allowNull: false },
+    stars: { type: DataTypes.INTEGER, allowNull: false }
 });
 
-const CentralOffice = sequelize.define('CentralOffice', {
-    office_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    chain_id: { type: DataTypes.INTEGER, allowNull: false },
-    email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
-    phone_number: { type: DataTypes.STRING(20) },
-    address: { type: DataTypes.STRING(255), allowNull: false },
-    office_name: { type: DataTypes.STRING(100) }
-}, {
-    tableName: 'central_office', // Adjusted table name
-    timestamps: false
+// Define the City model
+const City = sequelize.define('City', {
+    name: { type: DataTypes.STRING, allowNull: false, unique: true }
 });
 
-const Customer = sequelize.define('Customer', {
-    customer_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    first_name: { type: DataTypes.STRING(255), allowNull: false },
-    last_name: { type: DataTypes.STRING(255), allowNull: false },
-    sin: { type: DataTypes.STRING(15), allowNull: false, unique: true },
-    email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
-    password: { type: DataTypes.STRING(100), allowNull: false },
-    registration_date: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
-    phone_number: { type: DataTypes.STRING(20) },
-    customer_address: { type: DataTypes.STRING(255) }
-}, {
-    tableName: 'customers', // Adjusted table name
-    timestamps: false
+// Define the Position model
+const Position = sequelize.define('Position', {
+    name: { type: DataTypes.STRING, allowNull: false, unique: true }
 });
 
-const Employee = sequelize.define('Employee', {
-    employee_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    sin: { type: DataTypes.STRING(15), allowNull: false, unique: true },
-    email: { type: DataTypes.STRING(255), allowNull: false, unique: true },
-    password: { type: DataTypes.STRING(100), allowNull: false },
-    role: { type: DataTypes.STRING(50) },
-    hotel_id: { type: DataTypes.INTEGER },
-    employee_address: { type: DataTypes.STRING(255) }
-}, {
-    tableName: 'employees', // Adjusted table name
-    timestamps: false
-
-});
-
+// Chambre
 const Room = sequelize.define('Room', {
     room_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     hotel_id: { type: DataTypes.INTEGER, allowNull: false },
-    room_number: { type: DataTypes.INTEGER, allowNull: false },
-    room_type: { type: DataTypes.STRING(50) },
-    capacity: { type: DataTypes.INTEGER },
-    price_per_night: { type: DataTypes.DECIMAL(10, 2) },
-
-   /* category VARCHAR(50), -- Luxurious, standard or economic
-*/
-availability: { type: DataTypes.BOOLEAN, defaultValue: true } ,
-    room_category:{type: DataTypes.STRING(50) } ,
-}, {
-    tableName: 'rooms', // Adjusted table name
-    timestamps: false
-
+    room_number: { type: DataTypes.INTEGER, allowNull: true },
+    price: { type: DataTypes.DECIMAL(10, 2), allowNull: false },
+    capacity: { type: DataTypes.STRING(50), allowNull: false },
+    hasBalcony: { type: DataTypes.BOOLEAN, allowNull: false },
+    hasMinibar: { type: DataTypes.BOOLEAN, allowNull: false },
+    hasWiFi: { type: DataTypes.BOOLEAN, allowNull: false },
+    hasTV: { type: DataTypes.BOOLEAN, allowNull: false },
+    issues: { type: DataTypes.STRING(255) , allowNull: true}
 });
 
-const Booking = sequelize.define('Booking', {
-    booking_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    chain_id: { type: DataTypes.INTEGER, allowNull: false },
-    hotel_id: { type: DataTypes.INTEGER, allowNull: false },
-    room_number: { type: DataTypes.INTEGER },
+// Client
+const Customer = sequelize.define('Customer', {
+    customer_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    full_name: { type: DataTypes.STRING(255), allowNull: false },
+    address: { type: DataTypes.STRING(255), allowNull: false },
+    social_security_number: { type: DataTypes.STRING(20), allowNull: false },
+    registration_date: { type: DataTypes.DATE, allowNull: false }
+});
+
+// Employé
+const Employee = sequelize.define('Employee', {
+    employee_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    full_name: { type: DataTypes.STRING(255), allowNull: false },
+    address: { type: DataTypes.STRING(255), allowNull: false },
+    social_security_number: { type: DataTypes.STRING(20), allowNull: false },
+    role: { type: DataTypes.STRING(100), allowNull: true },
+    hotel_id: { type: DataTypes.INTEGER, allowNull: false }
+});
+
+// Réservation
+const Reservation = sequelize.define('Reservation', {
+    reservation_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     customer_id: { type: DataTypes.INTEGER, allowNull: false },
-    status: { type: DataTypes.STRING(50) },
-    active: { type: DataTypes.BOOLEAN, defaultValue: true },
-    rated: { type: DataTypes.BOOLEAN, defaultValue: false },
-    check_in: { type: DataTypes.DATE, allowNull: false },
-    check_out: { type: DataTypes.DATE, allowNull: false }
-}, {
-    tableName: 'bookings', // Adjusted table name
-    timestamps: false
-
-});
-
-const Amenity = sequelize.define('Amenity', {
-    amenity_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    amenity_name: { type: DataTypes.STRING(100), allowNull: false, unique: true }
-}, {
-    tableName: 'amenities', // Adjusted table name
-    timestamps: false
-
-});
-
-const RoomAmenity = sequelize.define('RoomAmenity', {
     room_id: { type: DataTypes.INTEGER, allowNull: false },
-    amenity_id: { type: DataTypes.INTEGER, allowNull: false }
-}, {
-    tableName: 'room_amenities', // Adjusted table name
-    timestamps: false
-
+    start_date: { type: DataTypes.DATE, allowNull: false },
+    end_date: { type: DataTypes.DATE, allowNull: false },
+    is_checked_in: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false }
 });
 
-const View = sequelize.define('View', {
-    view_id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    view_type: { type: DataTypes.STRING(50) },
-    room_id: { type: DataTypes.INTEGER, allowNull: false, unique: true }
-}, {
-    tableName: 'views', // Adjusted table name
-    timestamps: false
+Chain.hasMany(Hotel, { foreignKey: 'chain_id' });
+Hotel.belongsTo(Chain, { foreignKey: 'chain_id' });
 
-});
+Hotel.hasMany(Room, { foreignKey: 'hotel_id' });
+Room.belongsTo(Hotel, { foreignKey: 'hotel_id' });
 
+Hotel.hasMany(Employee, { foreignKey: 'hotel_id' });
+Employee.belongsTo(Hotel, { foreignKey: 'hotel_id', onDelete: 'CASCADE' }); // Added onDelete option to cascade delete related employees when a hotel is deleted
 
-View.belongsTo(Room, { foreignKey: 'room_id' });
+Customer.hasMany(Reservation, { foreignKey: 'customer_id' });
+Reservation.belongsTo(Customer, { foreignKey: 'customer_id' });
 
-module.exports = {
-    sequelize,
-    HotelChain,
-    Hotel,
-    CentralOffice,
-    Customer,
-    Employee,
-    Room,
-    Booking,
-    Amenity,
-    RoomAmenity,
-    View,
-};
+Room.hasMany(Reservation, { foreignKey: 'room_id' });
+Reservation.belongsTo(Room, { foreignKey: 'room_id' });
+
+module.exports = { sequelize, Chain, Hotel, Room, Customer, Employee, Reservation, City, Position };
