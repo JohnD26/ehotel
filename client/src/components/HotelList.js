@@ -13,6 +13,7 @@ const HotelList = () => {
 
     useEffect(() => {
         // Additional effect to handle asynchronous loading if necessary, e.g., fetching from an API
+
     }, []);
 
     const handlePageChange = pageNumber => setCurrentPage(pageNumber);
@@ -31,6 +32,8 @@ const HotelList = () => {
     const firstHotelIndex = lastHotelIndex - hotelsPerPage;
     const currentHotels = hotels.slice(firstHotelIndex, lastHotelIndex);
 
+    console.log("currentHotels : ", currentHotels);
+
     return (
         <div className="hotel-list-container">
             <h2>Search Results</h2>
@@ -41,9 +44,10 @@ const HotelList = () => {
                             <h3>{hotel.hotel_name}</h3>
                             <div>Rating: {'★'.repeat(hotel.stars)}</div>
                             <div>{hotel.description}</div>
-                            <div>Amenities: {hotel.amenities?.join(', ')}</div>
-                            <div>Capacity: {hotel.capacity}</div>
-                            <div>View: {hotel.view}</div>
+                            <div>Rooms: {hotel.Rooms.length}</div>
+                            <div>Adress: {hotel.hotel_address}</div>
+                            <div>Email: {hotel.contact_email}</div>
+                            <div>Phone: {hotel.contact_phone}</div>
                             <button onClick={() => handleBooking(hotel.hotel_id)}>Book Now</button>
                         </div>
                     ))}

@@ -21,7 +21,7 @@
 }
 
 .hotel-card {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -29,6 +29,7 @@
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease-in-out;
+    color: black;
 }
 
 .hotel-card:hover {

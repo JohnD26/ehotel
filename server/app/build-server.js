@@ -4,10 +4,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const api = require('./api');
 require('dotenv/config');
-const { sequelize, Customer, Hotel, Chain, Room, City, Employee, Position} = require('./sequelize');
+const { sequelize, Customer, Hotel, Chain, Room, City, Employee, Position } = require('./sequelize');
 const fs = require('fs');
 
-const chainMock = require("./utils/chainMock")
+const chainMock = require("./utils/chainMock");
 const hotelMock = require("./utils/hotelMock");
 const roomMock = require("./utils/roomMock");
 const positionMock = require("./utils/positionMock");
@@ -33,27 +33,36 @@ module.exports = async (cb) => {
 
     // Connect to the database and start the server
     try {
+        // Authenticate with the database
         await sequelize.authenticate();
         console.log('Database connection has been established successfully.');
 
-        //await sequelize.sync({ force: true, logging: false });
-        //console.log('Database synchronized');
+        // Sync models with the database (if needed)
+         //await sequelize.sync({ force: true, logging: false });
+        // console.log('Database synchronized');
 
-        //await chainMock.createAll(sequelize, Chain);
-        //await hotelMock.createAll(sequelize, Hotel);
-        //await roomMock.createAll(sequelize, Room);
-        //await citiesMock.createAll(sequelize, City)
-        //await employeeMock.createAll(sequelize, Employee)
-        //await positionMock.createAll(sequelize, Position);
+        // Create mock data (if needed)
+        chainMock.createAll(sequelize, Chain)
+            //.then(() => hotelMock.createAll(sequelize, Hotel)
+                .then(() => roomMock.createAll(sequelize, Room)
+                        .then(() => citiesMock.createAll(sequelize, City)
+                            .then(() => employeeMock.createAll(sequelize, Employee)
+                                .then(() => positionMock.createAll(sequelize, Position)))))
 
-        // Create a customer (example)
-        //const tables = await sequelize.getQueryInterface().showAllTables()
-        //console.log('tables :', tables);
 
-        console.log("Employee : ", (await Employee.findAll()).length);
+        // Log the number of employees
+        console.log(" Chain:", (await Chain.findAll({logging: false})).length);
+        console.log(" Hotel:", (await Hotel.findAll({logging: false})).length);
+        console.log(" Room:", (await Room.findAll({logging: false})).length);
+        console.log(" Cities:", (await City.findAll({logging: false})).length);
+        console.log(" Employee:", (await Employee.findAll({logging: false})).length);
+        console.log(" Position:", (await Position.findAll({logging: false})).length);
 
         // Start the server
-        const server = app.listen(process.env.PORT || 3001, () => cb && cb(server))
+        const server = app.listen(process.env.PORT || 3001, () => {
+            console.log(`Server is running on port ${server.address().port}`);
+            if (cb) cb(server);
+        });
 
     } catch (error) {
         console.error('Unable to connect to the database:', error);

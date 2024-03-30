@@ -30,9 +30,18 @@ async function createAll(sequelize, City){
         ];
 
         // Use bulkCreate to insert multiple records at once
-        const cities = await City.bulkCreate(citiesData);
+        //const cities = await City.bulkCreate(citiesData);
 
-        console.log('City inserted:', cities.map(city => city.toJSON()));
+        const cities = await Promise.all(citiesData.map(async(city) => {
+            await City.findOrCreate({
+                where: {name: city.name},
+                defaults: city,
+                logging: false
+
+            })
+        }))
+
+        console.log('City inserted:');
 
     } catch (error) {
         console.error('Error inserting cities:', error);

@@ -19,14 +19,13 @@ router.get('/search', async (req, res) => {
 
     try {
         // Initialize the search criteria for Sequelize
-       /* let searchCriteria = {
+        let searchCriteria = {
             where: {},
             include: [
                 {
                     model: Room,
-                    as: 'rooms',
                     where: {},
-                    include: [
+                    /*include: [
                         {
                             model: Amenity,
                             as: 'amenities',
@@ -42,7 +41,7 @@ router.get('/search', async (req, res) => {
                             required: false, // To include rooms regardless of bookings
                             where: {}
                         }
-                    ]
+                    ]*/
                 }
             ]
         };
@@ -77,7 +76,7 @@ router.get('/search', async (req, res) => {
         }
 
         // Availability filter based on booking dates
-        if (startDate && endDate) {
+        /*if (startDate && endDate) {
             searchCriteria.include[0].include[2].where = {
                 [Op.or]: [
                     { start_date: { [Op.gt]: new Date(endDate) } },
@@ -88,7 +87,7 @@ router.get('/search', async (req, res) => {
 
         // Execute the search query
         //const hotels = await Hotel.findAll(searchCriteria);
-        const hotels = await Hotel.findAll();
+        const hotels = await Hotel.findAll(searchCriteria);
         res.json(hotels);
 
         /*let filteredHotels = hotels;

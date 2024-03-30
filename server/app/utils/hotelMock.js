@@ -53,7 +53,17 @@ async function createAll(sequelize, Hotel){
         ];
 
         // Bulk insert hotels data
-        await Hotel.bulkCreate(hotelsData);
+        //await Hotel.bulkCreate(hotelsData);
+
+        const hotels = await Promise.all(hotelsData.map(async(hotel) => {
+            await Hotel.findOrCreate({
+                where: {hotel_id: hotel.hotel_id},
+                defaults: hotel,
+                logging: false
+
+            })
+        }))
+
 
         console.log('Hotels data inserted successfully.');
     } catch (error) {

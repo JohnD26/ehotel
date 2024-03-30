@@ -44,9 +44,17 @@ async function createAll(sequelize, Employee){
         ];
 
         // Use bulkCreate to insert multiple records at once
-        const employees = await Employee.bulkCreate(employeesData);
+        //const employees = await Employee.bulkCreate(employeesData);
 
-        console.log('Employee inserted:', employees.map(employee => employee.toJSON()));
+        const employees = await Promise.all(employeesData.map(async(employee) => {
+            await Employee.findOrCreate({
+                where: {email: employee.email},
+                defaults: employee,
+                logging: false
+            })
+        }))
+
+        console.log('Employee inserted:');
 
     } catch (error) {
         console.error('Error inserting employees:', error);

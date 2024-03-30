@@ -10,9 +10,18 @@ async function createAll(sequelize, Position){
         ];
 
         // Use bulkCreate to insert multiple records at once
-        const positions = await Position.bulkCreate(positionsData);
+        //const positions = await Position.bulkCreate(positionsData);
 
-        console.log('Position inserted:', positions.map(position => position.toJSON()));
+        const positions = await Promise.all(positionsData.map(async(position) => {
+            await Position.findOrCreate({
+                where: {name: position.name},
+                defaults: position,
+                logging: false
+
+            })
+        }))
+
+        console.log('Position inserted:');
 
     } catch (error) {
         console.error('Error inserting positions:', error);

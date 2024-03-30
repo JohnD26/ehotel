@@ -21,7 +21,10 @@ const Hotel = sequelize.define('Hotel', {
     hotel_address: { type: DataTypes.STRING(255), allowNull: false },
     contact_email: { type: DataTypes.STRING(255), allowNull: false },
     contact_phone: { type: DataTypes.STRING(20), allowNull: false },
-    stars: { type: DataTypes.INTEGER, allowNull: false }
+    stars: { type: DataTypes.INTEGER, allowNull: false },
+    sea_view: { type: DataTypes.BOOLEAN, allowNull: false },
+    mountain_view: { type: DataTypes.BOOLEAN, allowNull: false },
+    extendable: { type: DataTypes.BOOLEAN, allowNull: false },
 });
 
 // Define the City model
@@ -54,7 +57,9 @@ const Customer = sequelize.define('Customer', {
     full_name: { type: DataTypes.STRING(255), allowNull: false },
     address: { type: DataTypes.STRING(255), allowNull: false },
     social_security_number: { type: DataTypes.STRING(20), allowNull: false },
-    registration_date: { type: DataTypes.DATE, allowNull: false }
+    registration_date: { type: DataTypes.DATE, allowNull: false },
+    email: { type: DataTypes.STRING(255), allowNull: false },
+    password: { type: DataTypes.STRING(255), allowNull: false },
 });
 
 // Employé
@@ -64,7 +69,8 @@ const Employee = sequelize.define('Employee', {
     address: { type: DataTypes.STRING(255), allowNull: false },
     social_security_number: { type: DataTypes.STRING(20), allowNull: false },
     role: { type: DataTypes.STRING(100), allowNull: true },
-    hotel_id: { type: DataTypes.INTEGER, allowNull: false }
+    hotel_id: { type: DataTypes.INTEGER, allowNull: false },
+    email: { type: DataTypes.STRING(255), allowNull: false },
 });
 
 // Réservation

@@ -10,9 +10,18 @@ async function createAll(sequelize, Chain){
         ];
 
         // Use bulkCreate to insert multiple records at once
-        const chains = await Chain.bulkCreate(chainsData);
+        //const chains = await Chain.bulkCreate(chainsData);
 
-        console.log('Chains inserted:', chains.map(chain => chain.toJSON()));
+        const chains = await Promise.all(chainsData.map(async (chain) => {
+            await Chain.findOrCreate({
+                where: {chain_id: chain.chain_id},
+                defaults: chain,
+                logging: false
+
+            })
+        }))
+
+        console.log('Chains inserted:');
 
     } catch (error) {
         console.error('Error inserting chains:', error);

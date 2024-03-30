@@ -3,7 +3,7 @@ async function createAll(sequelize, Room){
     try {
         const roomsData = [
             {
-                "roomId": "20001",
+                "room_id": "20001",
                 "hotel_id": "11001",
                 "price": 100,
                 "capacity": 150,
@@ -15,7 +15,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20002",
+                "room_id": "20002",
                 "hotel_id": "11001",
                 "price": 200,
                 "capacity": 200,
@@ -27,7 +27,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20003",
+                "room_id": "20003",
                 "hotel_id": "11001",
                 "price": 300,
                 "capacity": 100,
@@ -39,7 +39,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20004",
+                "room_id": "20004",
                 "hotel_id": "11001",
                 "price": 400,
                 "capacity": 250,
@@ -51,7 +51,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20005",
+                "room_id": "20005",
                 "hotel_id": "11001",
                 "price": 500,
                 "capacity": 180,
@@ -63,7 +63,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20006",
+                "room_id": "20006",
                 "hotel_id": "11002",
                 "price": 100,
                 "capacity": 220,
@@ -75,7 +75,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20007",
+                "room_id": "20007",
                 "hotel_id": "11002",
                 "price": 200,
                 "capacity": 180,
@@ -87,7 +87,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20008",
+                "room_id": "20008",
                 "hotel_id": "11002",
                 "price": 300,
                 "capacity": 120,
@@ -99,7 +99,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20009",
+                "room_id": "20009",
                 "hotel_id": "11002",
                 "price": 400,
                 "capacity": 300,
@@ -111,7 +111,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20010",
+                "room_id": "20010",
                 "hotel_id": "11002",
                 "price": 500,
                 "capacity": 250,
@@ -123,7 +123,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20011",
+                "room_id": "20011",
                 "hotel_id": "11003",
                 "price": 100,
                 "capacity": 180,
@@ -135,7 +135,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20012",
+                "room_id": "20012",
                 "hotel_id": "11003",
                 "price": 200,
                 "capacity": 150,
@@ -147,7 +147,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20013",
+                "room_id": "20013",
                 "hotel_id": "11003",
                 "price": 300,
                 "capacity": 220,
@@ -159,7 +159,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20014",
+                "room_id": "20014",
                 "hotel_id": "11003",
                 "price": 400,
                 "capacity": 300,
@@ -171,7 +171,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20015",
+                "room_id": "20015",
                 "hotel_id": "11003",
                 "price": 500,
                 "capacity": 250,
@@ -183,7 +183,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20016",
+                "room_id": "20016",
                 "hotel_id": "11004",
                 "price": 100,
                 "capacity": 80,
@@ -195,7 +195,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20017",
+                "room_id": "20017",
                 "hotel_id": "11004",
                 "price": 200,
                 "capacity": 75,
@@ -207,7 +207,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20018",
+                "room_id": "20018",
                 "hotel_id": "11004",
                 "price": 300,
                 "capacity": 80,
@@ -219,7 +219,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20019",
+                "room_id": "20019",
                 "hotel_id": "11004",
                 "price": 400,
                 "capacity": 75,
@@ -231,7 +231,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20020",
+                "room_id": "20020",
                 "hotel_id": "11004",
                 "price": 500,
                 "capacity": 80,
@@ -243,7 +243,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20021",
+                "room_id": "20021",
                 "hotel_id": "11005",
                 "price": 100,
                 "capacity": 100,
@@ -255,7 +255,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20022",
+                "room_id": "20022",
                 "hotel_id": "11005",
                 "price": 200,
                 "capacity": 100,
@@ -267,7 +267,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20023",
+                "room_id": "20023",
                 "hotel_id": "11005",
                 "price": 300,
                 "capacity": 100,
@@ -279,7 +279,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20024",
+                "room_id": "20024",
                 "hotel_id": "11005",
                 "price": 400,
                 "capacity": 100,
@@ -291,7 +291,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20025",
+                "room_id": "20025",
                 "hotel_id": "11005",
                 "price": 500,
                 "capacity": 100,
@@ -303,7 +303,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             }
             ,{
-                "roomId": "20026",
+                "room_id": "20026",
                 "hotel_id": "11006",
                 "price": 100,
                 "capacity": 60,
@@ -315,7 +315,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20027",
+                "room_id": "20027",
                 "hotel_id": "11006",
                 "price": 200,
                 "capacity": 60,
@@ -327,7 +327,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20028",
+                "room_id": "20028",
                 "hotel_id": "11006",
                 "price": 300,
                 "capacity": 60,
@@ -339,7 +339,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20029",
+                "room_id": "20029",
                 "hotel_id": "11006",
                 "price": 400,
                 "capacity": 60,
@@ -351,7 +351,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20030",
+                "room_id": "20030",
                 "hotel_id": "11006",
                 "price": 500,
                 "capacity": 60,
@@ -363,7 +363,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20031",
+                "room_id": "20031",
                 "hotel_id": "11007",
                 "price": 100,
                 "capacity": 120,
@@ -375,7 +375,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20032",
+                "room_id": "20032",
                 "hotel_id": "11007",
                 "price": 200,
                 "capacity": 140,
@@ -387,7 +387,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20033",
+                "room_id": "20033",
                 "hotel_id": "11007",
                 "price": 300,
                 "capacity": 90,
@@ -399,7 +399,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20034",
+                "room_id": "20034",
                 "hotel_id": "11007",
                 "price": 400,
                 "capacity": 200,
@@ -411,7 +411,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20035",
+                "room_id": "20035",
                 "hotel_id": "11007",
                 "price": 500,
                 "capacity": 70,
@@ -423,7 +423,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20036",
+                "room_id": "20036",
                 "hotel_id": "11008",
                 "price": 100,
                 "capacity": 130,
@@ -435,7 +435,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20037",
+                "room_id": "20037",
                 "hotel_id": "11008",
                 "price": 200,
                 "capacity": 160,
@@ -447,7 +447,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20038",
+                "room_id": "20038",
                 "hotel_id": "11008",
                 "price": 300,
                 "capacity": 110,
@@ -459,7 +459,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20039",
+                "room_id": "20039",
                 "hotel_id": "11008",
                 "price": 400,
                 "capacity": 250,
@@ -471,7 +471,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20040",
+                "room_id": "20040",
                 "hotel_id": "11008",
                 "price": 500,
                 "capacity": 90,
@@ -483,7 +483,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20101",
+                "room_id": "20101",
                 "hotel_id": "12001",
                 "price": 100,
                 "capacity": 150,
@@ -495,7 +495,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20102",
+                "room_id": "20102",
                 "hotel_id": "12001",
                 "price": 200,
                 "capacity": 200,
@@ -507,7 +507,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20103",
+                "room_id": "20103",
                 "hotel_id": "12001",
                 "price": 300,
                 "capacity": 100,
@@ -521,7 +521,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20104",
+                "room_id": "20104",
                 "hotel_id": "12001",
                 "price": 400,
                 "capacity": 250,
@@ -533,7 +533,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20105",
+                "room_id": "20105",
                 "hotel_id": "12001",
                 "price": 500,
                 "capacity": 180,
@@ -545,7 +545,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             }
             ,{
-                "roomId": "20106",
+                "room_id": "20106",
                 "hotel_id": "12002",
                 "price": 100,
                 "capacity": 220,
@@ -557,7 +557,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20107",
+                "room_id": "20107",
                 "hotel_id": "12002",
                 "price": 200,
                 "capacity": 180,
@@ -569,7 +569,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20108",
+                "room_id": "20108",
                 "hotel_id": "12002",
                 "price": 300,
                 "capacity": 120,
@@ -581,7 +581,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20109",
+                "room_id": "20109",
                 "hotel_id": "12002",
                 "price": 400,
                 "capacity": 300,
@@ -593,7 +593,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20110",
+                "room_id": "20110",
                 "hotel_id": "12002",
                 "price": 500,
                 "capacity": 250,
@@ -605,7 +605,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20111",
+                "room_id": "20111",
                 "hotel_id": "12003",
                 "price": 100,
                 "capacity": 180,
@@ -617,7 +617,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20112",
+                "room_id": "20112",
                 "hotel_id": "12003",
                 "price": 200,
                 "capacity": 150,
@@ -629,7 +629,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20113",
+                "room_id": "20113",
                 "hotel_id": "12003",
                 "price": 300,
                 "capacity": 220,
@@ -641,7 +641,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20114",
+                "room_id": "20114",
                 "hotel_id": "12003",
                 "price": 400,
                 "capacity": 300,
@@ -653,7 +653,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20115",
+                "room_id": "20115",
                 "hotel_id": "12003",
                 "price": 500,
                 "capacity": 250,
@@ -665,7 +665,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20116",
+                "room_id": "20116",
                 "hotel_id": "12004",
                 "price": 100,
                 "capacity": 80,
@@ -677,7 +677,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20117",
+                "room_id": "20117",
                 "hotel_id": "12004",
                 "price": 200,
                 "capacity": 75,
@@ -689,7 +689,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20118",
+                "room_id": "20118",
                 "hotel_id": "12004",
                 "price": 300,
                 "capacity": 80,
@@ -701,7 +701,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20119",
+                "room_id": "20119",
                 "hotel_id": "12004",
                 "price": 400,
                 "capacity": 75,
@@ -713,7 +713,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20120",
+                "room_id": "20120",
                 "hotel_id": "12004",
                 "price": 500,
                 "capacity": 80,
@@ -725,7 +725,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20121",
+                "room_id": "20121",
                 "hotel_id": "12005",
                 "price": 100,
                 "capacity": 100,
@@ -737,7 +737,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20122",
+                "room_id": "20122",
                 "hotel_id": "12005",
                 "price": 200,
                 "capacity": 100,
@@ -749,7 +749,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20123",
+                "room_id": "20123",
                 "hotel_id":
 
                     "12005",
@@ -763,7 +763,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20124",
+                "room_id": "20124",
                 "hotel_id": "12005",
                 "price": 400,
                 "capacity": 100,
@@ -775,7 +775,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20125",
+                "room_id": "20125",
                 "hotel_id": "12005",
                 "price": 500,
                 "capacity": 100,
@@ -787,7 +787,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20126",
+                "room_id": "20126",
                 "hotel_id": "12006",
                 "price": 100,
                 "capacity": 60,
@@ -799,7 +799,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20127",
+                "room_id": "20127",
                 "hotel_id": "12006",
                 "price": 200,
                 "capacity": 60,
@@ -811,7 +811,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20128",
+                "room_id": "20128",
                 "hotel_id": "12006",
                 "price": 300,
                 "capacity": 60,
@@ -823,7 +823,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20129",
+                "room_id": "20129",
                 "hotel_id": "12006",
                 "price": 400,
                 "capacity": 60,
@@ -835,7 +835,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": true
             },
             {
-                "roomId": "20130",
+                "room_id": "20130",
                 "hotel_id": "12006",
                 "price": 500,
                 "capacity": 60,
@@ -847,7 +847,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20131",
+                "room_id": "20131",
                 "hotel_id": "12007",
                 "price": 100,
                 "capacity": 120,
@@ -859,7 +859,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20132",
+                "room_id": "20132",
                 "hotel_id": "12007",
                 "price": 200,
                 "capacity": 140,
@@ -871,7 +871,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20133",
+                "room_id": "20133",
                 "hotel_id": "12007",
                 "price": 300,
                 "capacity": 90,
@@ -883,7 +883,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20134",
+                "room_id": "20134",
                 "hotel_id": "12007",
                 "price": 400,
                 "capacity": 200,
@@ -895,7 +895,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20135",
+                "room_id": "20135",
                 "hotel_id": "12007",
                 "price": 500,
                 "capacity": 70,
@@ -907,7 +907,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20136",
+                "room_id": "20136",
                 "hotel_id": "12008",
                 "price": 100,
                 "capacity": 130,
@@ -919,7 +919,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20137",
+                "room_id": "20137",
                 "hotel_id": "12008",
                 "price": 200,
                 "capacity": 160,
@@ -931,7 +931,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20138",
+                "room_id": "20138",
                 "hotel_id": "12008",
                 "price": 300,
                 "capacity": 120,
@@ -943,7 +943,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20139",
+                "room_id": "20139",
                 "hotel_id": "12008",
                 "price": 400,
                 "capacity": 250,
@@ -955,7 +955,7 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
             {
-                "roomId": "20140",
+                "room_id": "20140",
                 "hotel_id": "12008",
                 "price": 500,
                 "capacity": 90,
@@ -967,94 +967,102 @@ async function createAll(sequelize, Room){
                 "hasBalcony": false
             },
 
-            {"roomId": "20201", "hotel_id": "13001", "price": 100, "capacity": 150, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20202", "hotel_id": "13001", "price": 200, "capacity": 200, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20203", "hotel_id": "13001", "price": 300, "capacity": 100, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20204", "hotel_id": "13001", "price": 400, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20205", "hotel_id": "13001", "price": 500, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20206", "hotel_id": "13002", "price": 100, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20207", "hotel_id": "13002", "price": 200, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20208", "hotel_id": "13002", "price": 300, "capacity": 120, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20209", "hotel_id": "13002", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20210", "hotel_id": "13002", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20211", "hotel_id": "13003", "price": 100, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20212", "hotel_id": "13003", "price": 200, "capacity": 150, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20213", "hotel_id": "13003", "price": 300, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20214", "hotel_id": "13003", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20215", "hotel_id": "13003", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20216", "hotel_id": "13004", "price": 100, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20217", "hotel_id": "13004", "price": 200, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20218", "hotel_id": "13004", "price": 300, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20219", "hotel_id": "13004", "price": 400, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20220", "hotel_id": "13004", "price": 500, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20221", "hotel_id": "13005", "price": 100, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20222", "hotel_id": "13005", "price": 200, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20223", "hotel_id": "13005", "price": 300, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20224", "hotel_id": "13005", "price": 400, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20225", "hotel_id": "13005", "price": 500, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20226", "hotel_id": "13006", "price": 100, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20227", "hotel_id": "13006", "price": 200, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20228", "hotel_id": "13006", "price": 300, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20229", "hotel_id": "13006", "price": 400, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20230", "hotel_id": "13006", "price": 500, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20231", "hotel_id": "13007", "price": 100, "capacity": 120, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20232", "hotel_id": "13007", "price": 200, "capacity": 140, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20233", "hotel_id": "13007", "price": 300, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20234", "hotel_id": "13007", "price": 400, "capacity": 200, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20235", "hotel_id": "13007", "price": 500, "capacity": 70, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20236", "hotel_id": "13008", "price": 100, "capacity": 130, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20237", "hotel_id": "13008", "price": 200, "capacity": 160, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20238", "hotel_id": "13008", "price": 300, "capacity": 130, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20239", "hotel_id": "13008", "price": 400, "capacity": 250, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20240", "hotel_id": "13008", "price": 500, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20301", "hotel_id": "14001", "price": 100, "capacity": 150, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20302", "hotel_id": "14001", "price": 200, "capacity": 200, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20303", "hotel_id": "14001", "price": 300, "capacity": 100, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20304", "hotel_id": "14001", "price": 400, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20305", "hotel_id": "14001", "price": 500, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20201", "hotel_id": "13001", "price": 100, "capacity": 150, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20202", "hotel_id": "13001", "price": 200, "capacity": 200, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20203", "hotel_id": "13001", "price": 300, "capacity": 100, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20204", "hotel_id": "13001", "price": 400, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20205", "hotel_id": "13001", "price": 500, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20206", "hotel_id": "13002", "price": 100, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20207", "hotel_id": "13002", "price": 200, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20208", "hotel_id": "13002", "price": 300, "capacity": 120, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20209", "hotel_id": "13002", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20210", "hotel_id": "13002", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20211", "hotel_id": "13003", "price": 100, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20212", "hotel_id": "13003", "price": 200, "capacity": 150, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20213", "hotel_id": "13003", "price": 300, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20214", "hotel_id": "13003", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20215", "hotel_id": "13003", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20216", "hotel_id": "13004", "price": 100, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20217", "hotel_id": "13004", "price": 200, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20218", "hotel_id": "13004", "price": 300, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20219", "hotel_id": "13004", "price": 400, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20220", "hotel_id": "13004", "price": 500, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20221", "hotel_id": "13005", "price": 100, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20222", "hotel_id": "13005", "price": 200, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20223", "hotel_id": "13005", "price": 300, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20224", "hotel_id": "13005", "price": 400, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20225", "hotel_id": "13005", "price": 500, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20226", "hotel_id": "13006", "price": 100, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20227", "hotel_id": "13006", "price": 200, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20228", "hotel_id": "13006", "price": 300, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20229", "hotel_id": "13006", "price": 400, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20230", "hotel_id": "13006", "price": 500, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20231", "hotel_id": "13007", "price": 100, "capacity": 120, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20232", "hotel_id": "13007", "price": 200, "capacity": 140, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20233", "hotel_id": "13007", "price": 300, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20234", "hotel_id": "13007", "price": 400, "capacity": 200, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20235", "hotel_id": "13007", "price": 500, "capacity": 70, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20236", "hotel_id": "13008", "price": 100, "capacity": 130, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20237", "hotel_id": "13008", "price": 200, "capacity": 160, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20238", "hotel_id": "13008", "price": 300, "capacity": 130, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20239", "hotel_id": "13008", "price": 400, "capacity": 250, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20240", "hotel_id": "13008", "price": 500, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": true, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20301", "hotel_id": "14001", "price": 100, "capacity": 150, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20302", "hotel_id": "14001", "price": 200, "capacity": 200, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20303", "hotel_id": "14001", "price": 300, "capacity": 100, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20304", "hotel_id": "14001", "price": 400, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20305", "hotel_id": "14001", "price": 500, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
 
-            {"roomId": "20306", "hotel_id": "14002", "price": 100, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20307", "hotel_id": "14002", "price": 200, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20308", "hotel_id": "14002", "price": 300, "capacity": 120, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20309", "hotel_id": "14002", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20310", "hotel_id": "14002", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20311", "hotel_id": "14003", "price": 100, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20312", "hotel_id": "14003", "price": 200, "capacity": 150, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20313", "hotel_id": "14003", "price": 300, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20314", "hotel_id": "14003", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20315", "hotel_id": "14003", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20316", "hotel_id": "14004", "price": 100, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20317", "hotel_id": "14004", "price": 200, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20318", "hotel_id": "14004", "price": 300, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20319", "hotel_id": "14004", "price": 400, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20320", "hotel_id": "14004", "price": 500, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20321", "hotel_id": "14005", "price": 100, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20322", "hotel_id": "14005", "price": 200, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20323", "hotel_id": "14005", "price": 300, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20324", "hotel_id": "14005", "price": 400, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20325", "hotel_id": "14005", "price": 500, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20326", "hotel_id": "14006", "price": 100, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20327", "hotel_id": "14006", "price": 200, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20328", "hotel_id": "14006", "price": 300, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20329", "hotel_id": "14006", "price": 400, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20330", "hotel_id": "14006", "price": 500, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20331", "hotel_id": "14007", "price": 100, "capacity": 120, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20332", "hotel_id": "14007", "price": 200, "capacity": 140, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20333", "hotel_id": "14007", "price": 300, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20334", "hotel_id": "14007", "price": 400, "capacity": 200, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20335", "hotel_id": "14007", "price": 500, "capacity": 70, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20336", "hotel_id": "14008", "price": 100, "capacity": 130, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20337", "hotel_id": "14008", "price": 200, "capacity": 160, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
-            {"roomId": "20338", "hotel_id": "14008", "price": 300, "capacity": 150, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
-            {"roomId": "20339", "hotel_id": "14008", "price": 400, "capacity": 250, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
-            {"roomId": "20440", "hotel_id": "15008", "price": 500, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false}
+            {"room_id": "20306", "hotel_id": "14002", "price": 100, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20307", "hotel_id": "14002", "price": 200, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20308", "hotel_id": "14002", "price": 300, "capacity": 120, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20309", "hotel_id": "14002", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20310", "hotel_id": "14002", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20311", "hotel_id": "14003", "price": 100, "capacity": 180, "amenities": "TV, WiFi, minibar", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20312", "hotel_id": "14003", "price": 200, "capacity": 150, "amenities": "TV, WiFi", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20313", "hotel_id": "14003", "price": 300, "capacity": 220, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20314", "hotel_id": "14003", "price": 400, "capacity": 300, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 3, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20315", "hotel_id": "14003", "price": 500, "capacity": 250, "amenities": "TV, WiFi, minibar, balcony", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20316", "hotel_id": "14004", "price": 100, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20317", "hotel_id": "14004", "price": 200, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20318", "hotel_id": "14004", "price": 300, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20319", "hotel_id": "14004", "price": 400, "capacity": 75, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20320", "hotel_id": "14004", "price": 500, "capacity": 80, "amenities": "Wifi, TV, Air conditioning, Mini bar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20321", "hotel_id": "14005", "price": 100, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20322", "hotel_id": "14005", "price": 200, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20323", "hotel_id": "14005", "price": 300, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20324", "hotel_id": "14005", "price": 400, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20325", "hotel_id": "14005", "price": 500, "capacity": 100, "amenities": "Wifi, TV, Air conditioning, Balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20326", "hotel_id": "14006", "price": 100, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20327", "hotel_id": "14006", "price": 200, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20328", "hotel_id": "14006", "price": 300, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20329", "hotel_id": "14006", "price": 400, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20330", "hotel_id": "14006", "price": 500, "capacity": 60, "amenities": "Wifi, TV, Air conditioning", "numberOfBeds": 2, "hasTV": false, "hasWiFi": true, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20331", "hotel_id": "14007", "price": 100, "capacity": 120, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20332", "hotel_id": "14007", "price": 200, "capacity": 140, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20333", "hotel_id": "14007", "price": 300, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20334", "hotel_id": "14007", "price": 400, "capacity": 200, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20335", "hotel_id": "14007", "price": 500, "capacity": 70, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20336", "hotel_id": "14008", "price": 100, "capacity": 130, "amenities": "Air conditioning, TV, minibar", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20337", "hotel_id": "14008", "price": 200, "capacity": 160, "amenities": "Air conditioning, TV, minibar, balcony", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": true},
+            {"room_id": "20338", "hotel_id": "14008", "price": 300, "capacity": 150, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": true, "hasMinibar": false, "hasBalcony": false},
+            {"room_id": "20339", "hotel_id": "14008", "price": 400, "capacity": 250, "amenities": "Air conditioning, TV", "numberOfBeds": 2, "hasTV": true, "hasWiFi": false, "hasMinibar": true, "hasBalcony": false},
+            {"room_id": "20440", "hotel_id": "15008", "price": 500, "capacity": 90, "amenities": "Air conditioning, TV", "numberOfBeds": 1, "hasTV": false, "hasWiFi": false, "hasMinibar": false, "hasBalcony": false}
 
         ];
 
         // Use bulkCreate to insert multiple records at once
-        const rooms = await Room.bulkCreate(roomsData);
+        //const rooms = await Room.bulkCreate(roomsData);
 
-        console.log('Rooms inserted:', rooms.map(room => room.toJSON()));
+        const rooms = await Promise.all(roomsData.map(async(room) => {
+            await Room.findOrCreate({
+                where: {room_id: room.room_id},
+                defaults: room,
+                logging: false
+            })
+        }))
+
+        console.log('Rooms inserted:');
 
     } catch (error) {
         console.error('Error inserting rooms:', error);
